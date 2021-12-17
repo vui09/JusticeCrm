@@ -1,0 +1,28 @@
+@import '../../assets/_variables.scss';
+
+.cabinet_form{
+
+  .row{
+    display: flex;
+    @media screen and (max-width: 380px){
+      flex-wrap: wrap;
+    }
+  }
+  .wrap{
+    width: 380px;
+    margin-bottom: 33px;
+    margin-right: 32px;
+    &:last-child{
+      margin-right: 0;
+    }
+    @media screen and (max-width: 380px){
+      margin-right: 0;
+    }
+  }
+  .btn{
+    border: 0;
+    width: 158px;
+    text-align: center;
+    color: $white;
+  }
+}

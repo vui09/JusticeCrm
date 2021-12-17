@@ -1,0 +1,49 @@
+@import "../../assets/_variables.scss";
+
+.wrapper{
+  display: flex;
+  width: 100%;
+}
+
+.l-content, .r-content{
+  width: 50%;
+}
+.l-content{
+  display: grid;
+  place-content: center;
+}
+.form{
+  width: 380px;
+  text-align: center;
+  h1{
+    margin-bottom: 24px;
+  }
+  .first{
+    display: flex;
+    justify-content: space-between;
+    .row{
+      width: 47%;
+    }
+  }
+  .row{
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  .btn{
+    margin: 40px 0 32px;
+  }
+  .link{
+    color: $blue;
+    font-weight: 500;
+    font-size: $link-size;
+    line-height: $link-size;
+  }
+  .text{
+    font-size: $link-size;
+    line-height: $link-size;
+  }
+}
+.r-content{
+  background: url("../../assets/images/sign_in.jpg") no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,22 @@
+@import "../../assets/_variables.scss";
+
+.product_table{
+  background: red;
+  .btn-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .btn{
+      background: rgba(83, 130, 231, 0.1);
+      padding: 0 16px;
+      height: 28px;
+      color: $blue;
+      img{
+        padding: 0;
+      }
+    }
+    .close{
+      cursor: pointer;
+    }
+  }
+}

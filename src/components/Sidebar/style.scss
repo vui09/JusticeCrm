@@ -1,0 +1,144 @@
+@import "../../assets/_variables.scss";
+
+.sidebar{
+  background: $white;
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media screen and (max-width: 930px){
+    max-width: 250px;
+  }
+}
+
+.logo{
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 50px 46px 67px 40px;
+  display: flex;
+  height: 30px;
+  line-height: 30px;
+  flex: 1;
+
+  &-icon{
+    background: $blue;
+    border-radius: 3px;
+    color: $white;
+    font-size: 14px;
+    padding: 0 8px;
+    margin-left: 10px;
+  }
+}
+
+.navigation {
+  flex: 20;
+  display: flex;
+  flex-direction: column;
+  a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: $text-color;
+    font-size: $link-size;
+    height: 56px;
+    text-decoration: none;
+    padding-left: 40px;
+    font-weight: 500;
+    line-height: 14px;
+
+    span {
+      opacity: 0.4;
+      margin-left: 12px;
+    }
+
+    img {
+      filter: grayscale(1);
+      opacity: .6;
+    }
+
+    &.active{
+      color: $blue;
+      background: rgba(83, 130, 231, .1);
+
+      span {
+        opacity: 1;
+      }
+
+      img {
+        filter: grayscale(0);
+        opacity: 1;
+      }
+      &:before{
+        content: '';
+        background: $blue;
+        height: 56px;
+        width: 2px;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}
+
+.navigation-bottom{
+  flex: 1;
+  margin: 0 40px;
+  border-top: 1px solid #E8EBEF;
+  a{
+    margin-top: 28px;
+    padding-left: 0;
+    img{
+      opacity: .4;
+    }
+    &:hover {
+      color: $blue;
+      background: none;
+    }
+  }
+}
+.btn-mobile{
+  display: none;
+}
+
+@media screen and (max-width: 700px){
+  .navigation{
+    display: none;
+    a{
+      box-sizing: border-box;
+    }
+  }
+  .logo{
+    flex: 0;
+    margin: 30px 0 0 40px;
+  }
+  .sidebar{
+    height: 90px;
+    width: 100%;
+    position: absolute;
+    z-index: 9;
+    max-width: none;
+  }
+  .btn-mobile{
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    display: block;
+    span{
+      width: 30px;
+      height: 3px;
+      background: $text-color;
+      margin: 7px 0;
+      display: block;
+    }
+  }
+  .active{
+    height: 100vh;
+    width: 100%;
+    .navigation{
+      display: flex;
+      margin-top: 30px;
+    }
+  }
+}
