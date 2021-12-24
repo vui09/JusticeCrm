@@ -11,14 +11,15 @@ import CreateAccount from "./pages/CreateAccount";
 import './assets/_global.scss'
 
 function App() {
-  const isAuth = localStorage?.getItem('isAuth') === 'true'
+
+  const [isAuth, setisAuth] = useState(localStorage?.getItem('token'))
   const [flag, setFlag] = useState(false)
 
   return (
     <div className="App">
       {isAuth
         ? <Routes>
-	          <Route path="/" element={<Main />} />
+	          <Route path="/" element={<Main setisAuth={setisAuth}/>} />
             <Route path="/products" element={<Products flag={flag} setFlag={setFlag} />} />
 	          <Route path="/sales" element={<Sales />} />
 	          <Route path="/cabinet" element={<Cabinet />} />
@@ -28,7 +29,7 @@ function App() {
 	          />
           </Routes>
         : <Routes>
-			      <Route path="/signin" element={<Signin />} />
+			      <Route path="/signin" element={<Signin setisAuth={setisAuth} />} />
 			      <Route path="/createAccount" element={<CreateAccount />} />
 			      <Route
 				      path="*"

@@ -2,9 +2,9 @@ import React from 'react';
 
 import Graphs from "../components/Graphs/Graphs";
 
-const Main = () => {
+const Main = ({setisAuth}) => {
 	return (
-		<Graphs />
+		<Graphs setisAuth={setisAuth} />
 	);
 };
 

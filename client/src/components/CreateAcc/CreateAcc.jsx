@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useNavigate, Link} from "react-router-dom";
 
 import './style.scss'
+import {auth} from "../../api/api";
 
 const CreateAcc = () => {
 	const navigate = useNavigate()
@@ -31,31 +32,15 @@ const CreateAcc = () => {
 				checkPassword
 			}
 
-			localStorage.setItem('User', JSON.stringify(user))
+			//localStorage.setItem('User', JSON.stringify(user))
+
+			auth.registration(user).then((res) => console.log('===>res', res))
 			navigate('/signin')
 		} else {
 			console.error('Ошибка валидации')
 		}
 
 	}, [fnError, passwordError, cnError, lnError, emailError, checkPasswordError])
-
-	// useEffect(() => {
-	// 	console.log('RENDER')
-	// })
-	//
-	// useEffect(() => {
-	// 	console.log('Mounting или ОТРИСОВКА В ДОМ')
-	// }, [])
-	//
-	// useEffect(() => {
-	// 	console.log('companyName изменился')
-	// }, [companyName])
-	//
-	// useEffect(() => {
-	// 	return () => {
-	// 		console.log('FORM IS DELETED')
-	// 	}
-	// }, [])
 
 
 	function validateFirstName() {

@@ -1,9 +1,9 @@
 import React from 'react';
 import Sign from "../components/Sign/Sign";
 
-const Signin = () => {
+const Signin = ({setisAuth}) => {
 	return (
-		<Sign />
+		<Sign setisAuth={setisAuth} />
 	);
 };
 

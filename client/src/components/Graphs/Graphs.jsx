@@ -7,10 +7,10 @@ import SalesOverview from "../SalesOverview/SalesOverview";
 
 import './style.scss'
 
-const Graphs = () => {
+const Graphs = ({setisAuth}) => {
 	return (
 		<>
-			<Sidebar />
+			<Sidebar setisAuth={setisAuth}/>
 			<div className="content-container">
 				<Header
 					title={'Sales statistics'}
